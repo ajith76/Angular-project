@@ -1,0 +1,18 @@
+
+.totalcontainer{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 350px;
+    background-color: bisque;
+
+}
+.heading{
+    display: flex;
+    justify-content: space-between;
+}
+.movieposter{
+    height: 550px;
+    width: 350px;
+    object-fit: cover;
+}
