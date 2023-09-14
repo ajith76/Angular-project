@@ -1,0 +1,10 @@
+<div>
+  <input type="text" id="MovieName" placeholder="Name" />
+  <input type="text" id="MovieName" placeholder="Rating" />
+  <input type="text" id="MovieName" placeholder="Poster" />
+  <input type="text" id="MovieName" placeholder="Summary" />
+  <button class="addbutton" (click)="addmovie()">Add Movie</button>
+</div>
+<section class="movie-list-container">
+  <app-movie *ngFor="let mv of movieList" [movie]="mv"></app-movie>
+</section>
