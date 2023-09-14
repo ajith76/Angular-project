@@ -7,8 +7,13 @@ import { Component ,Input} from '@angular/core';
 })
 export class ColorBoxcomponentComponent {
   @Input() clr  = 'pink';
+  colorList = ['red','pink','orange'];
   updateclr(event : any){
     this.clr = event.target.value;
     
+  }
+  addcolor(){
+    this.colorList.push(this.clr);
+    console.log('adding.......')
   }
 }
