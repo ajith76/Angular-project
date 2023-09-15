@@ -4,7 +4,17 @@
   <input type="text" id="MovieName" placeholder="Poster" />
   <input type="text" id="MovieName" placeholder="Summary" />
   <button class="addbutton" (click)="addmovie()">Add Movie</button>
+  <!-- <iframe
+    width="930"
+    height="523"
+    src="https://www.youtube.com/embed/M56Uv6ToYZw"
+    title="Catching Simps in 24 hours 😂 | Fake ID Prank 3"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe> -->
 </div>
 <section class="movie-list-container">
   <app-movie *ngFor="let mv of movieList" [movie]="mv"></app-movie>
+  <app-counter></app-counter>
 </section>

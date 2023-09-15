@@ -19,4 +19,19 @@ export class MovieComponent {
     summary:
       'Members of a black ops team must track and eliminate a gang of masked murderers.',
   };
+  count = 0
+  dislikecount = 0
+  // value = 0
+  increment(){
+    console.log('like pressed');
+    this.count++;
+   
+  }
+
+  decrement(){
+    console.log('dislike pressed');
+    this.dislikecount++;
+    
+  }
+
 }

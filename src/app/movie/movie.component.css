@@ -33,3 +33,13 @@
   .movie-details {
     padding: 1rem;
   }
+  .like{
+    padding-left: 30px;
+  }
+  .movie-list-container {
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-around;
+  }

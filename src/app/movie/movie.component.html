@@ -1,12 +1,38 @@
-<div class="movie-container">
-  <img [src]="movie.poster" [alt]="movie.name" class="movie-poster" />
-  <div class="movie-details">
-    <div class="movie-spec">
-      <!-- Template binding : In html we are binding the value  -->
-      <h2 class="movie-name">{{ movie.name }}</h2>
-      <p class="movie-rating">{{ movie.rating }}</p>
-    </div>
+<section class="movie-list-container">
+  <div class="movie-container">
+    <img [src]="movie.poster" [alt]="movie.name" class="movie-poster" />
+    <div class="movie-details">
+      <div class="movie-spec">
+        <!-- Template binding : In html we are binding the value  -->
+        <h2 class="movie-name">{{ movie.name }}</h2>
+        <p class="movie-rating">{{ movie.rating }}</p>
+      </div>
 
-    <p class="movie-summary">{{ movie.summary }}</p>
+      <p class="movie-summary">{{ movie.summary }}</p>
+    </div>
+    <div class="like">
+      <button
+        mat-raised-button
+        color="primary"
+        matBadge="6"
+        matBadgePosition="before"
+        matBadgeColor="accent"
+        (click)="increment()"
+      >
+        👍
+      </button>
+    </div>
+    <div class="dislike">
+      <button
+        mat-raised-button
+        color="primary"
+        matBadge="6"
+        matBadgePosition="before"
+        matBadgeColor="accent"
+        (click)="decrement()"
+      >
+        👎
+      </button>
+    </div>
   </div>
-</div>
+</section>

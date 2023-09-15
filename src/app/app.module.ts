@@ -10,6 +10,9 @@ import { BoxcomponentComponent } from './boxcomponent/boxcomponent.component';
 import { MovieComponent } from './movie/movie.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddmovieComponent } from './addmovie/addmovie.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,15 @@ import { AddmovieComponent } from './addmovie/addmovie.component';
        BoxcomponentComponent,
        MovieComponent,
        AddmovieComponent,
+       MoviedetailsComponent,
        
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
