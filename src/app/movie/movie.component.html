@@ -1,38 +1,52 @@
-<section class="movie-list-container">
-  <div class="movie-container">
-    <img [src]="movie.poster" [alt]="movie.name" class="movie-poster" />
-    <div class="movie-details">
-      <div class="movie-spec">
-        <!-- Template binding : In html we are binding the value  -->
-        <h2 class="movie-name">{{ movie.name }}</h2>
-        <p class="movie-rating">{{ movie.rating }}</p>
-      </div>
+<div class="movie-container">
+  <img [src]="movie.poster" [alt]="movie.name" class="movie-poster" />
+  <div class="movie-details">
+    <div class="movie-spec">
+      <h2 class="movie-name">
+        {{ movie.name }}
+        <button
+          (click)="toggleSummary()"
+          mat-icon-button
+          color="primary"
+          aria-label="Toggle Summary"
+        >
+          <mat-icon *ngIf="show; else moreIcon">expand_less</mat-icon>
 
-      <p class="movie-summary">{{ movie.summary }}</p>
+          <ng-template #moreIcon>
+            <mat-icon>expand_more</mat-icon>
+          </ng-template>
+        </button>
+        <app-counter></app-counter>
+
+        <button
+          (click)="gotoMovieDetail()"
+          mat-icon-button
+          color="primary"
+          aria-label="Toggle Summary"
+        >
+          <mat-icon>info</mat-icon>
+        </button>
+      </h2>
+      <p class="movie-rating">⭐ {{ movie.rating }}</p>
     </div>
-    <div class="like">
-      <button
-        mat-raised-button
-        color="primary"
-        matBadge="6"
-        matBadgePosition="before"
-        matBadgeColor="accent"
-        (click)="increment()"
-      >
-        👍
-      </button>
-    </div>
-    <div class="dislike">
-      <button
-        mat-raised-button
-        color="primary"
-        matBadge="6"
-        matBadgePosition="before"
-        matBadgeColor="accent"
-        (click)="decrement()"
-      >
-        👎
-      </button>
-    </div>
+
+    <p *ngIf="show" class="movie-summary">{{ movie.summary }}</p>
+    <button
+      (click)="editMovie()"
+      mat-icon-button
+      color="accent"
+      aria-label="Edit Movie"
+    >
+      <mat-icon>edit</mat-icon>
+    </button>
+
+    <button
+      (click)="deleteMovie()"
+      mat-icon-button
+      color="warn"
+      aria-label="Edit Movie"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
   </div>
-</section>
+</div>

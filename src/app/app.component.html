@@ -1,9 +1,13 @@
-<!-- <app-color-boxcomponent></app-color-boxcomponent>
-<br />
-<section class="movie-list-container">
-  <app-movie *ngFor="let mv of movieList" [movie]="mv"></app-movie>
-</section> -->
+<header>
+  <nav>
+    <mat-toolbar color="primary">
+      <button mat-button routerLink="/">Home</button>
+      <button mat-button routerLink="/movies">Movies</button>
+      <button mat-button routerLink="/movies/add">Add Movie</button>
+    </mat-toolbar>
+  </nav>
+</header>
 
-<!-- <app-color-boxcomponent></app-color-boxcomponent> -->
-
-<router-outlet></router-outlet>
+<section class="router-container">
+  <router-outlet></router-outlet>
+</section>

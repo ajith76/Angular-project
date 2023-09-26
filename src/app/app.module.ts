@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,10 +10,20 @@ import { ColorBoxcomponentComponent } from './color-boxcomponent/color-boxcompon
 import { BoxcomponentComponent } from './boxcomponent/boxcomponent.component';
 import { MovieComponent } from './movie/movie.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AddmovieComponent } from './addmovie/addmovie.component';
+import { AddMovieFormComponent } from './addmovie/addmovie.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
+import { MovieListComponent } from './movielist/movielist.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule,} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatBadgeModule} from '@angular/material/badge';
+import { EditMovieFormComponent } from './edit-movie-form/edit-movie-form.component';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -24,8 +35,11 @@ import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
        ColorBoxcomponentComponent,
        BoxcomponentComponent,
        MovieComponent,
-       AddmovieComponent,
-       MoviedetailsComponent,
+       
+  
+       MovieListComponent,
+       AddMovieFormComponent,
+       EditMovieFormComponent
        
   ],
   imports: [
@@ -33,7 +47,12 @@ import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatToolbarModule,ReactiveFormsModule,HttpClientModule,MatInputModule,MatIconModule,
+    MatBadgeModule
+  
+
   ],
   providers: [],
   bootstrap: [AppComponent]

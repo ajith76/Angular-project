@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { Movie, name } from '../app.component'; // named import
-// import { Movie } from '../app.component';
-// import cool from "../app.component"; // default import
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { Movie, name } from '../app.component';
+import { MovieService } from '../movies.service';
+
 
 console.log(name(10));
 
@@ -12,26 +13,41 @@ console.log(name(10));
 })
 export class MovieComponent {
   @Input() movie: Movie = {
+    id: '99',
     name: 'Vikram',
     poster:
       'https://m.media-amazon.com/images/M/MV5BMmJhYTYxMGEtNjQ5NS00MWZiLWEwN2ItYjJmMWE2YTU1YWYxXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg',
     rating: 8.4,
     summary:
       'Members of a black ops team must track and eliminate a gang of masked murderers.',
+    trailer: 'https://www.youtube.com/embed/OKBMCL-frPU',
   };
-  count = 0
-  dislikecount = 0
-  // value = 0
-  increment(){
-    console.log('like pressed');
-    this.count++;
-   
+
+  @Output() removeMovie = new EventEmitter();
+
+  show = true;
+
+  constructor(private router: Router, private moviesService: MovieService) {}
+
+  toggleSummary() {
+    this.show = !this.show;
   }
 
-  decrement(){
-    console.log('dislike pressed');
-    this.dislikecount++;
-    
+  gotoMovieDetail() {
+    this.router.navigate([`/movies`, this.movie.id]);
   }
 
+ 
+
+  editMovie() {
+    this.router.navigate(['/movies/edit', this.movie.id]);
+  }
+
+
+  deleteMovie() {
+    this.moviesService.deleteMovieById(this.movie.id).subscribe(() => {
+      console.log('Movie deleted successfully');
+      this.removeMovie.emit();
+    });
+}
 }

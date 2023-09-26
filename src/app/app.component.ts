@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 // named export
 type Movie = {
+  trailer: string;
+  id: any;
   name: string;
   poster: string;
   rating: number;
